@@ -22,10 +22,12 @@
       <a href="hakkimda.html">Hakkımda</a>
     </nav>
 
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
-      <span class="theme-icon">◐</span>
-      <span>Tema</span>
-    </button>
+    <div class="top-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
+        <span class="theme-icon">◐</span>
+        <span>Tema</span>
+      </button>
+    </div>
   </header>
 
   <main class="shell">
@@ -65,122 +67,53 @@
       </div>
     </section>
 
-    <section class="search-card">
-      <div class="search-row">
-        <label class="input-icon">
-          <span>⌕</span>
-          <input type="search" placeholder="Kitap veya yazar ara..." disabled>
-        </label>
-
-        <div class="chips" aria-label="Örnek filtreler">
-          <span class="chip active">Tümü</span>
-          <span class="chip">Roman</span>
-          <span class="chip">Bilim</span>
-          <span class="chip">Felsefe</span>
-          <span class="chip">Kişisel Gelişim</span>
+    <section class="game-panel">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Mini Oyun</span>
+          <h2>Bookmark Catcher</h2>
         </div>
+        <div class="section-badge" id="bookmarkScoreBadge">0 puan</div>
       </div>
 
-      <div class="quick-row">
-        <label class="mini-field">
-          <span>Kitap adı</span>
-          <input type="text" placeholder="Kürk Mantolu Madonna" disabled>
-        </label>
-        <label class="mini-field">
-          <span>Yazar</span>
-          <input type="text" placeholder="Sabahattin Ali" disabled>
-        </label>
-        <label class="mini-field">
-          <span>Kategori</span>
-          <select disabled>
-            <option>Roman</option>
-          </select>
-        </label>
-        <label class="mini-field wide">
-          <span>Kısa özet</span>
-          <textarea rows="2" placeholder="Yalnızlık ve iç dünya üzerine..." disabled></textarea>
-        </label>
-        <button class="button dark" type="button" disabled>+ Kitap Ekle</button>
+      <div class="game-shell">
+        <div class="game-ui">
+          <div class="game-stat">
+            <strong id="bookmarkScore">0</strong>
+            <span>Puan</span>
+          </div>
+
+          <div class="game-stat">
+            <strong id="bookmarkLives">3</strong>
+            <span>Can</span>
+          </div>
+
+          <button class="button dark small" id="bookmarkRestart" type="button">Yeniden Başlat</button>
+        </div>
+
+        <canvas id="bookmarkCanvas" width="960" height="320"></canvas>
+
+        <p class="game-hint">Mouse ile kovayı sürükle veya sol / sağ ok tuşlarını kullan.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <div>
-          <span class="eyebrow">Koleksiyon özeti</span>
-          <h2>Arşivindeki kitaplar için şık, sakin ve düzenli bir alan.</h2>
+          <span class="eyebrow">Son eklenenler</span>
+          <h2>Arşivindeki en yeni 4 kitap</h2>
         </div>
-        <div class="section-badge">4 kitap</div>
+        <div class="section-badge" id="recentBooksCount">0</div>
       </div>
 
-      <div class="book-grid">
-        <article class="book-card">
-          <div class="book-topline">
-            <span class="tag purple">Roman</span>
-            <button class="fav" type="button" aria-label="Favori">♡</button>
-          </div>
-          <div class="book-icon gradient-purple">◫</div>
-          <h3>Kürk Mantolu Madonna</h3>
-          <p class="author">Sabahattin Ali</p>
-          <p class="excerpt">Yalnızlık, iç dünya ve anlaşılma isteği üzerine etkileyici bir roman.</p>
-          <div class="card-actions">
-            <button class="ghost delete" type="button">Sil</button>
-            <button class="ghost edit" type="button">Düzenle</button>
-          </div>
-        </article>
+      <div class="book-grid" id="recentBooksList"></div>
 
-        <article class="book-card">
-          <div class="book-topline">
-            <span class="tag green">Kişisel Gelişim</span>
-            <button class="fav" type="button" aria-label="Favori">♡</button>
-          </div>
-          <div class="book-icon gradient-green">◎</div>
-          <h3>Atomik Alışkanlıklar</h3>
-          <p class="author">James Clear</p>
-          <p class="excerpt">Küçük alışkanlıkların zaman içinde büyük değişimlere dönüşmesini anlatır.</p>
-          <div class="card-actions">
-            <button class="ghost delete" type="button">Sil</button>
-            <button class="ghost edit" type="button">Düzenle</button>
-          </div>
-        </article>
-
-        <article class="book-card">
-          <div class="book-topline">
-            <span class="tag orange">Felsefe</span>
-            <button class="fav" type="button" aria-label="Favori">♡</button>
-          </div>
-          <div class="book-icon gradient-orange">◌</div>
-          <h3>Simyacı</h3>
-          <p class="author">Paulo Coelho</p>
-          <p class="excerpt">Kendi yolunu bulmak, işaretleri fark etmek ve hayallerin peşinden gitmek üzerine.</p>
-          <div class="card-actions">
-            <button class="ghost delete" type="button">Sil</button>
-            <button class="ghost edit" type="button">Düzenle</button>
-          </div>
-        </article>
-
-        <article class="book-card">
-          <div class="book-topline">
-            <span class="tag blue">Bilim</span>
-            <button class="fav" type="button" aria-label="Favori">♡</button>
-          </div>
-          <div class="book-icon gradient-blue">⚛</div>
-          <h3>Zamanın Kısa Tarihi</h3>
-          <p class="author">Stephen Hawking</p>
-          <p class="excerpt">Evren, zaman ve kara delikler hakkında merak uyandıran popüler bilim kitabı.</p>
-          <div class="card-actions">
-            <button class="ghost delete" type="button">Sil</button>
-            <button class="ghost edit" type="button">Düzenle</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="empty-state">
-      <div class="empty-illustration">☰</div>
-      <h3>Kitap bulunamadı</h3>
-      <p>Arama kriterlerini değiştirebilir veya yeni bir kitap ekleyebilirsin.</p>
-      <a class="button primary small" href="kitaplar.html">+ İlk Kitabını Ekle</a>
+      <section class="empty-state is-wide" id="recentBooksEmpty" hidden>
+        <div class="empty-illustration">≋</div>
+        <h3>Henüz kitap eklenmedi</h3>
+        <p>İlk kitabını kitaplar sayfasından ekleyebilirsin.</p>
+        <a class="button primary small" href="kitaplar.html">Kitaplara Git</a>
+      </section>
     </section>
   </main>
 
@@ -214,6 +147,7 @@
   </footer>
 
   <button class="scroll-top" type="button" aria-label="Yukarı çık">↑</button>
+
   <script src="script.js"></script>
 </body>
 </html>

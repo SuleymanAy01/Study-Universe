@@ -22,10 +22,13 @@
       <a href="hakkimda.html">Hakkımda</a>
     </nav>
 
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
-      <span class="theme-icon">◐</span>
-      <span>Tema</span>
-    </button>
+    <div class="top-actions">
+      <button class="admin-toggle" type="button" data-admin-toggle>Yönetici Girişi</button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
+        <span class="theme-icon">◐</span>
+        <span>Tema</span>
+      </button>
+    </div>
   </header>
 
   <main class="shell">
@@ -71,7 +74,9 @@
           <button class="chip" type="button" data-filter="Kişisel Gelişim">Kişisel Gelişim</button>
         </div>
       </div>
+    </section>
 
+    <section class="search-card admin-only" id="adminPanel" hidden>
       <form id="bookForm" class="quick-row">
         <label class="mini-field">
           <span>Kitap adı</span>
@@ -157,6 +162,8 @@
   </footer>
 
   <button class="scroll-top" type="button" aria-label="Yukarı çık">↑</button>
+
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
