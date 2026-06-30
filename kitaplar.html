@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitaplar | Study Universe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="backdrop backdrop-a"></div>
+  <div class="backdrop backdrop-b"></div>
+
+  <header class="topbar shell">
+    <a class="brand" href="index.html" aria-label="Study Universe ana sayfa">
+      <span class="brand-mark">SU</span>
+      <span class="brand-text">Study Universe</span>
+    </a>
+
+    <nav class="nav" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a class="active" href="kitaplar.html">Kitaplar</a>
+      <a href="hakkimda.html">Hakkımda</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
+      <span class="theme-icon">◐</span>
+      <span>Tema</span>
+    </button>
+  </header>
+
+  <main class="shell">
+    <section class="hero hero-compact">
+      <div class="hero-copy">
+        <span class="eyebrow">Kitap koleksiyonun</span>
+        <h1>Kitaplarını keşfet, düzenle ve kendi kişisel arşivini oluştur.</h1>
+        <p>
+          Burada kitap ekleyebilir, filtreleyebilir, sıralayabilir ve okuma notlarını
+          tek bir koleksiyonda tutabilirsin.
+        </p>
+      </div>
+
+      <div class="hero-visual hero-mini" aria-hidden="true">
+        <div class="orb orb-left"></div>
+        <div class="orb orb-right"></div>
+        <div class="plant">
+          <span class="plant-pot"></span>
+          <span class="leaf leaf-left"></span>
+          <span class="leaf leaf-right"></span>
+          <span class="leaf leaf-center"></span>
+        </div>
+        <div class="books-stack">
+          <span class="book book-top"></span>
+          <span class="book book-middle"></span>
+          <span class="book book-bottom"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-card">
+      <div class="search-row">
+        <label class="input-icon">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Kitap veya yazar ara...">
+        </label>
+
+        <div class="chips" aria-label="Kategori filtreleri">
+          <button class="chip active" type="button" data-filter="all">Tümü</button>
+          <button class="chip" type="button" data-filter="Roman">Roman</button>
+          <button class="chip" type="button" data-filter="Bilim">Bilim</button>
+          <button class="chip" type="button" data-filter="Felsefe">Felsefe</button>
+          <button class="chip" type="button" data-filter="Kişisel Gelişim">Kişisel Gelişim</button>
+        </div>
+      </div>
+
+      <form id="bookForm" class="quick-row">
+        <label class="mini-field">
+          <span>Kitap adı</span>
+          <input id="title" type="text" placeholder="Kitap adı" required>
+        </label>
+        <label class="mini-field">
+          <span>Yazar</span>
+          <input id="author" type="text" placeholder="Yazar" required>
+        </label>
+        <label class="mini-field">
+          <span>Kategori</span>
+          <select id="category" required>
+            <option>Roman</option>
+            <option>Bilim</option>
+            <option>Felsefe</option>
+            <option>Kişisel Gelişim</option>
+          </select>
+        </label>
+        <label class="mini-field wide">
+          <span>Kısa özet</span>
+          <textarea id="desc" rows="2" placeholder="Kısa özet..." required></textarea>
+        </label>
+        <button class="button dark" type="submit">+ Kitap Ekle</button>
+      </form>
+    </section>
+
+    <section class="collection-panel">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Koleksiyonundaki Kitaplar</span>
+          <h2><span id="bookCount">4</span> kitap</h2>
+        </div>
+        <div class="sort-box">
+          <label>
+            <span>Eklenme</span>
+            <select id="sortSelect">
+              <option value="latest">En yeni</option>
+              <option value="oldest">En eski</option>
+              <option value="title">Ada göre</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="book-grid" id="bookList"></div>
+
+      <section class="empty-state is-wide" id="emptyState" hidden>
+        <div class="empty-illustration">☰</div>
+        <h3>Kitap bulunamadı</h3>
+        <p>Arama kriterlerini değiştirebilir veya yeni bir kitap ekleyebilirsin.</p>
+        <button class="button primary small" type="button" id="addFirstBook">+ İlk Kitabını Ekle</button>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div>
+      <div class="brand footer-brand">
+        <span class="brand-mark">SU</span>
+        <span class="brand-text">Study Universe</span>
+      </div>
+      <p>Kendi bilgi evrenini oluştur.</p>
+      <p>Okumak, öğrenmek, gelişmek.</p>
+    </div>
+
+    <div>
+      <h4>Bağlantılar</h4>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="kitaplar.html">Kitaplar</a>
+      <a href="hakkimda.html">Hakkımda</a>
+    </div>
+
+    <div>
+      <h4>Sosyal</h4>
+      <div class="social">
+        <span>⌂</span>
+        <span>in</span>
+        <span>t</span>
+      </div>
+    </div>
+
+    <p class="copyright">© 2026 Study Universe. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <button class="scroll-top" type="button" aria-label="Yukarı çık">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
