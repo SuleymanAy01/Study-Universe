@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="backdrop backdrop-a"></div>
-  <div class="backdrop backdrop-b"></div>
-
   <header class="topbar shell">
     <a class="brand" href="index.html" aria-label="Study Universe ana sayfa">
       <span class="brand-mark">SU</span>
@@ -22,12 +19,10 @@
       <a href="hakkimda.html">Hakkımda</a>
     </nav>
 
-    <div class="top-actions">
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
-        <span class="theme-icon">◐</span>
-        <span>Tema</span>
-      </button>
-    </div>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema değiştir">
+      <span class="theme-icon">●</span>
+      <span>Tema</span>
+    </button>
   </header>
 
   <main class="shell">
@@ -35,11 +30,7 @@
       <div class="hero-copy">
         <span class="eyebrow">Kitap koleksiyonun</span>
         <h1>Kitaplarını keşfet, özetle ve kendi arşivini kur.</h1>
-        <p>
-          Study Universe, okuduğun kitapları düzenli bir koleksiyona dönüştürmek için
-          tasarlandı. Kitap ekle, filtrele, favorilerini ayır ve her notu tek yerde tut.
-        </p>
-
+        <p>Study Universe, okuduğun kitapları düzenli bir koleksiyona dönüştürmek için tasarlandı. Kitap ekle, filtrele, favorilerini ayır ve notlarını tek yerde tut.</p>
         <div class="hero-actions">
           <a class="button primary" href="kitaplar.html">Kitaplara Git</a>
           <a class="button secondary" href="hakkimda.html">Projeyi Gör</a>
@@ -47,23 +38,11 @@
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <div class="orb orb-left"></div>
-        <div class="orb orb-right"></div>
-        <div class="spark spark-a">✦</div>
-        <div class="spark spark-b">✦</div>
-
-        <div class="plant">
-          <span class="plant-pot"></span>
-          <span class="leaf leaf-left"></span>
-          <span class="leaf leaf-right"></span>
-          <span class="leaf leaf-center"></span>
-        </div>
-
-        <div class="books-stack">
-          <span class="book book-top"></span>
-          <span class="book book-middle"></span>
-          <span class="book book-bottom"></span>
-        </div>
+        <div class="visual-card card-one"></div>
+        <div class="visual-card card-two"></div>
+        <div class="visual-book book-one"></div>
+        <div class="visual-book book-two"></div>
+        <div class="visual-book book-three"></div>
       </div>
     </section>
 
@@ -78,21 +57,11 @@
 
       <div class="game-shell">
         <div class="game-ui">
-          <div class="game-stat">
-            <strong id="bookmarkScore">0</strong>
-            <span>Puan</span>
-          </div>
-
-          <div class="game-stat">
-            <strong id="bookmarkLives">3</strong>
-            <span>Can</span>
-          </div>
-
+          <div class="game-stat"><strong id="bookmarkScore">0</strong><span>Puan</span></div>
+          <div class="game-stat"><strong id="bookmarkLives">3</strong><span>Can</span></div>
           <button class="button dark small" id="bookmarkRestart" type="button">Yeniden Başlat</button>
         </div>
-
         <canvas id="bookmarkCanvas" width="960" height="320"></canvas>
-
         <p class="game-hint">Mouse ile kovayı sürükle veya sol / sağ ok tuşlarını kullan.</p>
       </div>
     </section>
@@ -107,9 +76,7 @@
       </div>
 
       <div class="book-grid" id="recentBooksList"></div>
-
-      <section class="empty-state is-wide" id="recentBooksEmpty" hidden>
-        <div class="empty-illustration">≋</div>
+      <section class="empty-state" id="recentBooksEmpty" hidden>
         <h3>Henüz kitap eklenmedi</h3>
         <p>İlk kitabını kitaplar sayfasından ekleyebilirsin.</p>
         <a class="button primary small" href="kitaplar.html">Kitaplara Git</a>
@@ -119,35 +86,19 @@
 
   <footer class="footer shell">
     <div>
-      <div class="brand footer-brand">
-        <span class="brand-mark">SU</span>
-        <span class="brand-text">Study Universe</span>
-      </div>
+      <div class="brand footer-brand"><span class="brand-mark">SU</span><span class="brand-text">Study Universe</span></div>
       <p>Kendi bilgi evrenini oluştur.</p>
-      <p>Okumak, öğrenmek, gelişmek.</p>
     </div>
-
     <div>
       <h4>Bağlantılar</h4>
       <a href="index.html">Ana Sayfa</a>
       <a href="kitaplar.html">Kitaplar</a>
       <a href="hakkimda.html">Hakkımda</a>
     </div>
-
-    <div>
-      <h4>Sosyal</h4>
-      <div class="social">
-        <span>⌂</span>
-        <span>in</span>
-        <span>t</span>
-      </div>
-    </div>
-
     <p class="copyright">© 2026 Study Universe. Tüm hakları saklıdır.</p>
   </footer>
 
   <button class="scroll-top" type="button" aria-label="Yukarı çık">↑</button>
-
   <script src="script.js"></script>
 </body>
 </html>
