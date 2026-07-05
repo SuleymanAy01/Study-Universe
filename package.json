@@ -2,8 +2,14 @@
   "name": "study-universe",
   "version": "1.0.0",
   "private": true,
-  "description": "Study Universe secure local backend",
+  "description": "Study Universe secure backend with optional PostgreSQL storage",
   "scripts": {
     "start": "node server.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
